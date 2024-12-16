@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website with Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        #clock {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            clockElement.textContent = timeString;
+        }
+        setInterval(updateClock, 1000); // Update the clock every second
+    </script>
+</head>
+<body onload="updateClock()">
+    <header>
+        <h1>Welcome to My Simple Website</h1>
+        <div id="clock"></div>
+    </header>
+    <nav>
+        <a href="https://www.google.com" target="_blank">Google</a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </nav>
+    <main>
+        <p>Click the links above to visit some popular websites.</p>
+        <p>This is a simple HTML page with a working clock in the header.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Simple Website. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
